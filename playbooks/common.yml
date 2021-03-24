@@ -1,7 +1,7 @@
  
 ---
 - name: regular configurations
-  hosts: all
+  hosts: webservers
   become: yes
   user: dolapo
   
@@ -18,7 +18,7 @@
 
   - name: create directory
     file:
-      path: /home/ansible-directory
+      path: /home/dolapo/ansible-directory
       state: directory
 
   - name: Set timezone to West Africa
