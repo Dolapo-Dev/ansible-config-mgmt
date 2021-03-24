@@ -1,7 +1,7 @@
  
 ---
 - name: regular configurations
-  hosts: webservers
+  hosts: webservers, nfs
   become: yes
   user: dolapo
   
