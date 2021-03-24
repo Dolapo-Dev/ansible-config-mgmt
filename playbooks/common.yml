@@ -1,7 +1,9 @@
+ 
 ---
 - name: regular configurations
   hosts: all
-  become: true
+  become: yes
+  user: dolapo
   
   tasks:
   - name: update yum
@@ -21,8 +23,8 @@
 
   - name: Set timezone to West Africa
     timezone:
-      name: Africa/Nigeria
+      name: Africa/Lagos
 
 
 
-
+       
