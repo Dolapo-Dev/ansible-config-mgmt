@@ -1,0 +1,27 @@
+---
+- name: regular configurations
+  hosts: jenkins, db, lb
+  become: 'true'
+  
+  
+  tasks:
+  - name: Update and upgrade apt packages
+    apt:
+      upgrade: "yes"
+      update_cache: yes
+      cache_valid_time: 86400 #One day
+
+
+  - name: install nfs-client
+    apt:
+      name: nfs-common
+      state: latest
+
+  - name: create directory
+    file:
+      path: /home/dolapo/ansible-directory
+      state: directory
+
+  - name: Set timezone to West Africa
+    timezone:
+      name: Africa/Lagos
