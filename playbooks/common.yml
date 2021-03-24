@@ -1,0 +1,28 @@
+---
+- name: regular configurations
+  hosts: all
+  become: true
+  
+  tasks:
+  - name: update yum
+    yum:
+      name: yum
+      state: latest
+
+  - name: install nfs-client
+    yum:
+      name: nfs-utils
+      state: latest
+
+  - name: create directory
+    file:
+      path: /home/ansible-directory
+      state: directory
+
+  - name: Set timezone to West Africa
+    timezone:
+      name: Africa/Nigeria
+
+
+
+
